@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.openld.jetpacksample">
+    package="com.openld.jetpacksample" >
 
     <application
         android:name=".JetpackApplication"
@@ -11,19 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackSample"
-        tools:ignore="AllowBackup">
-        <!--主Activity-->
+        tools:ignore="AllowBackup" >
+        <activity
+            android:name=".navigation.NavigationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_navigation" />
+        <!-- 主Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.JetpackSample.NoActionBar">
+            android:theme="@style/Theme.JetpackSample.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--生命周期Activity-->
+        </activity> <!-- 生命周期Activity -->
         <activity
             android:name=".lifecycle.LifecycleActivity"
             android:exported="false"
