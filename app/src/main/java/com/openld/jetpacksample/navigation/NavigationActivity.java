@@ -11,6 +11,9 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.openld.jetpacksample.R;
 
+/**
+ * Navigation测试页
+ */
 public class NavigationActivity extends AppCompatActivity {
 
 

@@ -8,6 +8,9 @@ import android.view.View;
 
 import com.openld.jetpacksample.R;
 
+/**
+ * LifeCycle测试页
+ */
 public class LifecycleActivity extends AppCompatActivity {
     private ActivityLifecycleObserver mActivityLifeCycleObserver;
 

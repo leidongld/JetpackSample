@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.openld.jetpacksample.databinding.BookRatingUtil" />
+
+        <!--书籍对象的参数引入-->
+        <variable
+            name="book"
+            type="com.openld.jetpacksample.databinding.Book" />
+
+        <!--按钮点击处理器引入-->
+        <variable
+            name="ButtonClickHandler"
+            type="com.openld.jetpacksample.databinding.ButtonClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".databinding.DataBindingActivity">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="@{book.title}"
+            android:textAllCaps="false"
+            android:textColorHighlight="@color/black"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/txt_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="书名" />
+
+        <TextView
+            android:id="@+id/txt_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="@{book.author}"
+            android:textAllCaps="false"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toTopOf="@id/txt_rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            tools:text="作者" />
+
+        <TextView
+            android:id="@+id/txt_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="@{BookRatingUtil.getBookRatingStr(book.rating)}"
+            android:textAllCaps="false"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_click"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_author"
+            tools:text="星级" />
+
+        <Button
+            android:id="@+id/btn_click"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{ButtonClickHandler.onButtonClicked}"
+            android:text="Click Me"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="HardcodedText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
